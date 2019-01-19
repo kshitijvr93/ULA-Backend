@@ -7,6 +7,8 @@ var bodyParser = require("body-parser");
 var indexRouter = require('./routes/index');
 var uploadRouter = require('./routes/upload');
 var downloadRouter = require('./routes/get_val');
+var updateRouter = require('./routes/update');
+var deleteRouter = require('./routes/delete');
 var app = express();
 
 // view engine setup
@@ -24,8 +26,10 @@ app.use(bodyParser.json());
 
 // Routers
 app.use('/', indexRouter);
-app.use('/upload', uploadRouter);
-app.use('/get_val', downloadRouter);
+app.use('/api/upload', uploadRouter);
+app.use('/api/get_val', downloadRouter);
+app.use('/api/update', updateRouter);
+app.use('/api/delete', deleteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
