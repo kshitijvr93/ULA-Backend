@@ -13,7 +13,8 @@ router.get("/", function(req, res) {
     
     result.forEach(function(element) {
     response[element.Id] = {
-        Name: element.Name , Quiz_Difficulty: element['Quiz_Difficulty'], Quiz_Frequency: element['Quiz_Frequency'], HW_Difficulty: element['HW_Difficulty'] , HW_Frequency: element['HW_Frequency'] , Test_Difficulty: element['Test_Difficulty'], Test_Frequency: element['Test_Frequency']
+        
+        Name: element.Name , Professor: element['Professor'], Difficulty: element['Difficulty'], Clarity: element['Clarity'] , Grade: element['Grade'] 
     };
     
     });
@@ -35,8 +36,8 @@ router.get("/:id", function(req, res) {
     
     result.forEach(function(element) {
     response = {
-        Name: element.Name , Quiz_Difficulty: element.Quiz_Difficulty, Quiz_Frequency: element.Quiz_Frequency, HW_Difficulty: element.HW_Difficulty , HW_Frequency: element.HW_Frequency , Test_Difficulty: element.Test_Difficulty, Test_Frequency: element.Test_Frequency};
-    
+        Name: element.Name , Professor: element['Professor'], Difficulty: element['Difficulty'], Clarity: element['Clarity'] , Grade: element['Grade'] 
+    }
     });
     res.json(response);
   });
