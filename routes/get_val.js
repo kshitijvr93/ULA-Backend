@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
     result.forEach(function(element) {
     response[element.Id] = {
         
-        Name: element.Name , Professor: element['Professor'], Difficulty: element['Difficulty'], Clarity: element['Clarity'] , Grade: element['Grade'] 
+        Name: element.Name , Professor: element['Professor'], Difficulty: element['Difficulty'], Clarity: element['Clarity'] , Grade: element['Grade'] , Rating: element['Rating']
     };
     
     });
@@ -36,7 +36,7 @@ router.get("/:id", function(req, res) {
     
     result.forEach(function(element) {
     response = {
-        Name: element.Name , Professor: element['Professor'], Difficulty: element['Difficulty'], Clarity: element['Clarity'] , Grade: element['Grade'] 
+        Name: element.Name , Professor: element['Professor'], Difficulty: element['Difficulty'], Clarity: element['Clarity'] , Grade: element['Grade'] , Rating:element['Rating']
     }
     });
     res.json(response);
