@@ -7,6 +7,7 @@ var uploadRouter = require('./routes/upload');
 var downloadRouter = require('./routes/get_val');
 var updateRouter = require('./routes/update');
 var deleteRouter = require('./routes/delete');
+var reccoRouter = require('./routes/recco');
 var app = express();
 
 // Body Parser Middleware
@@ -25,7 +26,7 @@ app.use('/api/upload', uploadRouter);
 app.use('/api/get_val', downloadRouter);
 app.use('/api/update', updateRouter);
 app.use('/api/delete', deleteRouter);
-
+app.use('/api/recco', reccoRouter);
 
 
 
